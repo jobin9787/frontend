@@ -1,16 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpModule} from '@angular/http';
+import {CustomMaterialModule} from "./modules/custom-material/custom-material.module";
 import { AppComponent } from './app.component';
-
+import 'hammerjs';
+import { HomeComponent } from './components/home/home.component';
+import {routing} from './app.routing';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyAccountComponent} from './components/my-account/my-account.component';
+import {LoginService} from './services/login.service';
+import {UserService} from './services/user.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    NavBarComponent,
+    MyAccountComponent,
+    MyProfileComponent
   ],
   imports: [
-    BrowserModule
+  routing,
+    BrowserModule,
+    CustomMaterialModule,
+    FormsModule,
+    HttpModule,
+    BrowserAnimationsModule      
   ],
-  providers: [],
+  providers: [LoginService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
