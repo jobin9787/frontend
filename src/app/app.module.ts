@@ -13,13 +13,17 @@ import {LoginService} from './services/login.service';
 import {UserService} from './services/user.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { SubmitCarAddComponent } from './components/submit-car-add/submit-car-add.component';
+import {CarAdService} from './services/car-ad.service';
+import {CarmakeService} from './services/helper/carmake.service';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavBarComponent,
     MyAccountComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    SubmitCarAddComponent
   ],
   imports: [
   routing,
@@ -29,7 +33,7 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
     HttpModule,
     BrowserAnimationsModule      
   ],
-  providers: [LoginService,UserService],
+  providers: [LoginService,UserService,CarAdService,CarmakeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

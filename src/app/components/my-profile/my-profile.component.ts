@@ -21,6 +21,7 @@ export class MyProfileComponent implements OnInit {
 	private user: User = new User();
 	private updateSuccess: boolean;
 	private newPassword: string;
+  private currentPassword: string;
 	private incorrectPassword: boolean;
 
   constructor(
@@ -30,7 +31,8 @@ export class MyProfileComponent implements OnInit {
 
 
   	onUpdateUserInfo () {
-  	this.userService.updateUserInfo(this.user, this.newPassword).subscribe(
+    console.log(this.newPassword);
+  	this.userService.updateUserInfo(this.user, this.newPassword,this.currentPassword).subscribe(
   		res => {
   			console.log(res.text());
   			this.updateSuccess=true;
