@@ -1,24 +1,5 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      1 of 2
-    </div>
-    <div class="col-sm-6">
-      1 of 2
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      1 of 3
-    </div>
-    <div class="col-md-4">
-      1 of 3
-    </div>
-    <div class="col-md-4">
-      1 of 3
-    </div>
 
-  </div>
  
  <div class="col-xs-9">
 
@@ -26,98 +7,135 @@
   <div class="panel-group">
 	<div class="row">
 	 
-    <label for="firstName">Add Title</label>
-	<input type="text" class="form-control" id="firstName" name="firstName"/>
+    <label for="title">Add Title</label>
+	<input type="text" [(ngModel)]="carad.adtitle" class="form-control" id="title" name="firstName"/>
     </div>
   </div>
    <div class="row">
-     <mat-radio-group>
-     <mat-radio-button value="1">Option 1</mat-radio-button>
-     <mat-radio-button value="2">Option 2</mat-radio-button>
+    <label for="soldby">Sold by</label>
+     <mat-radio-group [(ngModel)]="carad.soldby" name="soldby">
+     <mat-radio-button value="deal">Dealer</mat-radio-button>
+     <mat-radio-button value="own">Owner</mat-radio-button>
      </mat-radio-group>	
    </div>	
 
     <div class="row">
      <div class="col-sm-6">
-       <label for="firstName">Mark</label>
-	<input type="text" class="form-control" id="firstName" name="firstName"/>
-    </div>
-    <div class="col-sm-6">
-     <label for="firstName">Model</label>
-	<input  type="text" class="form-control" id="firstName" name="firstName"/>
-    </div>
-    <div class="col-sm-6">
-       <label for="firstName">Transmission</label>
-	<input type="text" class="form-control" id="firstName" name="firstName"/>
-    </div>
-    <div class="col-sm-6">
-     <label for="firstName">Drivetrain</label>
-	<input  type="text" class="form-control" id="firstName" name="firstName"/>
-    </div>
-    <div class="col-sm-6">
-       <label for="firstName">Body Type</label>
-	<input type="text" class="form-control" id="firstName" name="firstName"/>
-    </div>
-    <div class="col-sm-6">
-     <label for="firstName">Fuel Type</label>
-	<input  type="text" class="form-control" id="firstName" name="firstName"/>
+        <div class="form-group">
+    		 <label for="carmake">Mark</label>
+         <select class="form-control" name="carmake" [(ngModel)]="carad.make" (change)="onMakeChange($event.target.value)">
+          <option [ngValue]="null" >---- Other ----</option>
+          <option *ngFor="let crm of allCarmake" [ngValue]="crm.makeId">
+           {{ crm.makeName }}
+          </option>
+         </select>
+       </div>
     </div>
     
-     <div class="col-sm-6">
-       <label for="firstName">Year</label>
-	<input type="text" class="form-control" id="firstName" name="firstName"/>
+    <div class="col-sm-6">
+    	<div class="form-group">
+    		 <label for="carmodel">Model</label>
+         <select class="form-control" name="carmodel" [(ngModel)]="carad.model">
+          <option [ngValue]="null" >---- Other ----</option>
+          <option *ngFor="let mdl of modellist" [ngValue]="mdl.modelid">
+           {{ mdl.modelname }}
+          </option>
+         </select>
+      </div>
+    </div>
+   
+   <div class="col-sm-6">
+      <div class="form-group">
+         <label for="trans">Transmission</label>
+         <select class="form-control" name="trans" [(ngModel)]="carad.trans">
+          <option [ngValue]="oth" >---- Other ----</option>
+          <option [ngValue]="auto">Automatic  </option>
+          <option [ngValue]="manu">Manual  </option>
+         </select>
+      </div>
+    </div>
+    
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="drive">Drivetrain</label>
+	       <select class="form-control" name="drive" [(ngModel)]="carad.drivetrain">
+          <option [ngValue]="oth" >---- Other ----</option>
+          <option [ngValue]="awd">All-wheel Drive AWD </option>
+          <option [ngValue]="fwd">Front-Wheel drive  </option>
+          <option [ngValue]="rwd">Rear-Wheel drive  </option>
+          <option [ngValue]="xxx">4X4  </option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="col-sm-6">
+         <div class="form-group">
+          <label for="body">Body Type</label>
+          <select class="form-control" name="body" [(ngModel)]="carad.body">
+          <option [ngValue]="oth" >---- Other ----</option>
+          <option [ngValue]="coup">coupe (2 doors) </option>
+          <option [ngValue]="conv">Convertible  </option>
+          <option [ngValue]="van">Mini Van  </option>
+          <option [ngValue]="sed">Sedan  </option>
+     </select>
+    </div>
     </div>
     <div class="col-sm-6">
-     <label for="firstName">Colour</label>
-	<input  type="text" class="form-control" id="firstName" name="firstName"/>
+       <div class="form-group">
+        <label for="fuel">Fuel Type</label>
+	        <select class="form-control" name="fuel" [(ngModel)]="carad.fuel">
+          <option [ngValue]="oth" >---- Other ----</option>
+          <option [ngValue]="gaz">Gaz</option>
+          <option [ngValue]="ess">Essence</option>
+          <option [ngValue]="hyb">Hybrid </option>
+          <option [ngValue]="elec">Electric  </option>
+         </select>
+      </div>
+   </div>
+     <div class="col-sm-6">
+      <div class="form-group">
+       <label for="year">Year</label>
+	      <input type="text" class="form-control" id="year" name="firstName"/>
+        </div>
+      </div>
+    
+     <div class="col-sm-6">
+       <div class="form-group">
+         <label for="color">Colour</label>
+        	<select class="form-control" name="color" [(ngModel)]="carad.color">
+          <option [ngValue]="oth" >---- Other ----</option>
+          <option [ngValue]="whi">White</option>
+          <option [ngValue]="blac">Black</option>
+          <option [ngValue]="blu">Blue </option>
+          <option [ngValue]="red">Red</option>
+         </select>
+       </div>
+      </div>
+     <div class="col-sm-6">
+      <div class="form-group">
+         <label for="firstName">Kilometers</label>
+	       <input type="text" class="form-control" [(ngModel)]="carad.kilometers" id="firstName" name="firstName"/>
+       </div>
+      </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="DoorsNo">No. of Doors:</label>
+	      <input  type="text" class="form-control" [(ngModel)]="carad.doorNo" id="DoorsNo" name="DoorsNo"/>
+     </div>
     </div>
+    
+    <input id="tile" type="file" id="bookImage" name="bookImage" (change)="uploadImageService.fileChangeEvent($event)">
+      <br><br>
 
-     <div class="col-sm-6">
-       <label for="firstName">Kilometers</label>
-	<input type="text" class="form-control" id="firstName" name="firstName"/>
-    </div>
-    <div class="col-sm-6">
-     <label for="firstName">No. of Doors:</label>
-	<input  type="text" class="form-control" id="firstName" name="firstName"/>
-    </div>
-  
    </div>
 
 
     <div class="col-sm-6">
-    	<div class="form-group">
-    		<label for="carmake"> select car Make</label>
-    <select class="form-control" name="carmake" [(ngModel)]="carad.make">
-          <option [ngValue]="null" disabled>Choose your car make</option>
-          <option *ngFor="let crm of allCarmake" [ngValue]="crm.makeId">
-           {{ crm.makeName }}
-          </option>
-     </select>
- </div>
-  <div class="form-group">
-    <label for="exampleSelect1">Example select</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-<mat-form-field>
-  <mat-select placeholder="Favorite food">
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{ food.viewValue }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-
- 			<mat-grid-list cols="20" rowHeight="60px">
-				<mat-grid-tile [colspan]="2" [rowspan]="1">
+   			<mat-grid-list cols="20" rowHeight="60px">
+				<mat-grid-tile [colspan]="4" [rowspan]="1">
 						<button class="mat-primary" mat-raised-button type="submit">Submit Ad</button>
 				</mat-grid-tile>
-				<mat-grid-tile [colspan]="2" [rowspan]="1">
+				<mat-grid-tile [colspan]="6" [rowspan]="1">
 					<a class="mat-warn" mat-raised-button routerLink="/">Cancel</a>
 				</mat-grid-tile>
 			</mat-grid-list>

@@ -16,6 +16,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
 import { SubmitCarAddComponent } from './components/submit-car-add/submit-car-add.component';
 import {CarAdService} from './services/car-ad.service';
 import {CarmakeService} from './services/helper/carmake.service';
+import {UploadImageService} from './services/upload-image.service';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import {CarmakeService} from './services/helper/carmake.service';
     NavBarComponent,
     MyAccountComponent,
     MyProfileComponent,
-    SubmitCarAddComponent
+    SubmitCarAddComponent,
+    UploadImageComponent
   ],
   imports: [
   routing,
@@ -33,7 +36,11 @@ import {CarmakeService} from './services/helper/carmake.service';
     HttpModule,
     BrowserAnimationsModule      
   ],
-  providers: [LoginService,UserService,CarAdService,CarmakeService],
+  providers: [LoginService,
+              UserService,
+              CarAdService,
+              CarmakeService,
+              UploadImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

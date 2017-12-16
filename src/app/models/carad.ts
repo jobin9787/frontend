@@ -19,7 +19,7 @@ export class Carad {
 		public  soldby: String;
 		public  trans: String;
 		public  color: String;
-		public  Drivetrain: String;
-		
+		public  drivetrain: String;
+		public  doorNo: String;
 
 }

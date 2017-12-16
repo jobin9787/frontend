@@ -1,7 +1,0 @@
-export class Carmakemodel { 
-    constructor(public makeId:string,public modelId:string, 
-    public modelName:string) 
-
-    {
-    }	
-}
