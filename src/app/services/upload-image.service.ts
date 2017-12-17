@@ -20,7 +20,9 @@ upload(adId:string){
   }
 
     fileChangeEvent(fileInput: any) {
-  	this.filesToUpload = <Array<File>> fileInput.target.files;
+  	//this.filesToUpload = <Array<File>> fileInput.target.files;
+    this.filesToUpload.push(fileInput.target.files) ;
+    console.log(this.filesToUpload);
   }
 
 
