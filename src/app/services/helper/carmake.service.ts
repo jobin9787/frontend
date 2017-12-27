@@ -17,7 +17,7 @@ export class CarmakeService {
 
    getCarmodel( makeid:String):   Carmodel[] {
 
-    console.log('makeid service'+  makeid );
+  
       let carmodelhonda = [
 		 new Carmodel('civ','Civic'),
 		 new Carmodel('acc','Accord'),
@@ -50,8 +50,7 @@ export class CarmakeService {
 
       modelMap.set("kia",carmodelkia);
    var makeidString: string ="'"+ makeid+"'";
-      console.log('mmmm get'+  makeidString );
-      
+    
        
       return m.get(makeid);	  
    };

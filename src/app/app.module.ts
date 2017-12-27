@@ -18,6 +18,7 @@ import {CarAdService} from './services/car-ad.service';
 import {CarmakeService} from './services/helper/carmake.service';
 import {UploadImageService} from './services/upload-image.service';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { CaradListComponent } from './components/carad-list/carad-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { UploadImageComponent } from './components/upload-image/upload-image.com
     MyAccountComponent,
     MyProfileComponent,
     SubmitCarAddComponent,
-    UploadImageComponent
+    UploadImageComponent,
+    CaradListComponent
   ],
   imports: [
   routing,

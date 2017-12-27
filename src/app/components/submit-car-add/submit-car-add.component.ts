@@ -21,7 +21,7 @@ private carad:Carad = new Carad();
 
   ngOnInit() {
    this.allCarmake = this.carmakeService.getCarmake();
-    console.log('allCarmake on init '+ JSON.stringify(this.allCarmake));
+//console.log('allCarmake on init '+ JSON.stringify(this.allCarmake));
     this.cartransmission=this.carmakeService.getTransmission()
   }
 
