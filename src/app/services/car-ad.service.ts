@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Carad} from '../models/carad';
 import {Http,Headers} from '@angular/http';
 import {AppConst} from '../const/app-const';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class CarAdService {
@@ -19,9 +20,8 @@ constructor(private http:Http) {}
     return this.http.post(url, JSON.stringify(carad), {headers: headers});
   }
 
-    listAllCarad(){
-    let url = this.serverPath+'/carad/list';
-      
+    getCaradList(){
+    let url = this.serverPath+'/carad/caradList';
     let headers = new Headers ({
       'Content-Type': 'application/json',
       'x-auth-token' : localStorage.getItem('xAuthToken')
@@ -32,14 +32,25 @@ constructor(private http:Http) {}
 
 
     getCarad(id: Number){
+      let url = this.serverPath+"/carad/"+id;
+      console.log("----> url "+url);
+	    let headers = new Headers ({
+	    'Content-Type':'application/json',
+	    'x-auth-token':localStorage.getItem('xAuthToken')
+       });
+     
+       return this.http.get(url, {headers:headers});
+     }
 
-   let url = this.serverPath+"/carad/"+id;
-	let headers = new Headers ({
-	'Content-Type':'application/json',
-	'x-auth-token':localStorage.getItem('xAuthToken')
-    });
-    return this.http.get(url, {headers:headers});
-  }
+  searchCarad(keyword:string){
 
+    let url = this.serverPath+"/carad/searchCarad";
+   	let headers = new Headers ({
+	  'Content-Type':'application/json',
+	  'x-auth-token':localStorage.getItem('xAuthToken')
+     });
+   
+     return this.http.post(url,keyword, {headers:headers});
+   }
 
 }

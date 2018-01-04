@@ -95,7 +95,14 @@
      <div class="col-sm-6">
       <div class="form-group">
        <label for="year">Year</label>
-	      <input type="text" class="form-control" id="year" name="firstName"/>
+          <select class="form-control" name="carmodel" [(ngModel)]="carad.year">
+          <option [ngValue]="null" >---- Other ----</option>
+          <option *ngFor="let yr of yearsList" [ngValue]="yr.value">
+           {{ yr.name }}
+          </option>
+         </select>
+
+
         </div>
       </div>
     
@@ -124,8 +131,6 @@
      </div>
     </div>
 
-    
-    <input id="tile" type="file" id="bookImage" name="bookImage" (change)="uploadImageService.fileChangeEvent($event)">
   <br><br>
 
    </div>

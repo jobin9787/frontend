@@ -5,6 +5,7 @@ import { Carmodel } from '../../domain/carmodel';
 import {Carad } from '../../models/Carad';
 import {CarAdService} from '../../services/car-ad.service';
 import {UploadImageService} from '../../services/upload-image.service';
+import {years} from '../../const/data-years';
 @Component({
   selector: 'app-submit-car-add',
   templateUrl: './submit-car-add.component.html',
@@ -14,15 +15,19 @@ export class SubmitCarAddComponent implements OnInit {
 allCarmake: Carmake[]; 
  modelarray: Carmodel[]=[];
  modellist: Carmodel[];
+ yearsList =[{value:1,name:'1'}];
  cartransmission :  Map<String,String>;
  modelListMap : Map<String, Carmodel[]>;
-private carad:Carad = new Carad();
+ private carad:Carad = new Carad();
   constructor(private carmakeService: CarmakeService, private carAdService :CarAdService, private uploadImageService: UploadImageService) { }
 
   ngOnInit() {
    this.allCarmake = this.carmakeService.getCarmake();
 //console.log('allCarmake on init '+ JSON.stringify(this.allCarmake));
-    this.cartransmission=this.carmakeService.getTransmission()
+ this.cartransmission=this.carmakeService.getTransmission()
+ console.log(years);
+ this.yearsList=Array.from(years);
+ console.log("Years test--> "+this.yearsList);
   }
 
   onSubmit(){
@@ -66,5 +71,5 @@ initModel() {
 	this.modelarray.push(new Carmodel('rio','Rio'));
 	this.modelListMap.set('kia',this.modelarray);
 	this.modelarray=[];
-}
+ }
 }

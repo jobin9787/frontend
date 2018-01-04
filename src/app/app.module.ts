@@ -19,6 +19,9 @@ import {CarmakeService} from './services/helper/carmake.service';
 import {UploadImageService} from './services/upload-image.service';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
 import { CaradListComponent } from './components/carad-list/carad-list.component';
+import { DataTableModule } from 'angular-4-data-table/src/index';
+import { CaradDetailComponent } from './components/carad-detail/carad-detail.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,8 @@ import { CaradListComponent } from './components/carad-list/carad-list.component
     MyProfileComponent,
     SubmitCarAddComponent,
     UploadImageComponent,
-    CaradListComponent
+    CaradListComponent,
+    CaradDetailComponent
   ],
   imports: [
   routing,
@@ -36,7 +40,9 @@ import { CaradListComponent } from './components/carad-list/carad-list.component
     CustomMaterialModule,
     FormsModule,
     HttpModule,
-    BrowserAnimationsModule      
+    BrowserAnimationsModule,
+    DataTableModule,
+    NgxPaginationModule      
   ],
   providers: [LoginService,
               UserService,
