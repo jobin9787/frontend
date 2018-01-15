@@ -1,0 +1,24 @@
+.mainimg{
+ width:100px;
+ height:20px;
+}
+.imgclass{
+width:100px;
+ height:20px;
+}
+.tabledetail{
+
+	float:left;
+}
+
+.green{
+	width:100px;
+	height:100px;
+	background-color: green;
+}
+
+.blue{
+	width:100px;
+	height:100px;
+	background-color:blue;
+}

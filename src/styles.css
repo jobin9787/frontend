@@ -2,3 +2,9 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
 @import './non-responsive.css';
+
+
+.group{
+	width:675px;
+	background-color:#3B240B !important;
+}

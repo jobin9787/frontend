@@ -1,3 +1,78 @@
-<p>
-  {{carad.id}}
-</p>
+	<div class="container">
+	<div class="row">
+	  <div class="col-sm-8"><img align="center" class="img-responsive" src="{{serverPath}}/image/carad/{{carad.id}}/{{carad.id}}1.png" onerror="this.src=&#39;https://static.paruvendu.com/201712281440/communfo/img/sitemobile/novisu-224x150.jpg?3&#39;"/></div>
+	  <div class="col-sm-4">col-sm-4</div>
+	</div>
+<div class="row">
+	<div class="col-sm-12">
+	 <br>
+	 <p>image list </p>
+  <modal-gallery [modalImages]="images"
+                 [downloadable]="false"
+                 [slideConfig]="{infinite: false}"
+                 (hasData)="onImageLoaded($event)"
+                 (close)="onCloseImageModal($event)"
+                 (show)="onVisibleIndex($event)"
+                 (firstImage)="onIsFirstImage($event)"
+                 (lastImage)="onIsLastImage($event)"></modal-gallery>	
+
+	</div>
+</div>
+
+	<div class="row">
+	  <div class="col-sm-12">col-sm</div>
+
+	  
+	</div>
+	<div class="row">
+	  <div class="col-sm-6">
+	 <table class="table">
+	  <tbody>
+	    <tr>
+	      <th scope="row">Make</th>
+	      <td>{{carad.make}}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">Model</th>
+	      <td>{{carad.model}}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">Year</th>
+	      <td>{{carad.year}}</td>
+	    </tr>
+	       <tr>
+	      <th scope="row">Fuel Type</th>
+	      <td>{{carad.fuel}}</td>
+	    </tr>
+	  </tbody>
+	</table>
+	</div>
+
+
+	  <div class="col-sm-6"> <table class="table">
+	  <tbody>
+	    <tr>
+	      <th scope="row">Body Type</th>
+	      <td>{{carad.body}}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">Colour</th>
+	      <td>{{carad.color}}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">Kilometers</th>
+	      <td>{{carad.kilometers}}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">Transmission</th>
+	      <td>{{carad.trans}}</td>
+	    </tr>
+	  </tbody>
+	</table></div>
+	  
+	</div>
+
+
+
+
+	</div>

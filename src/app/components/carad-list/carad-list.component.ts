@@ -62,28 +62,3 @@
 	}
 
 
-const data: Carad[] = [
-	  {id: '1', make: 'Hydrogen', model: '1.0079', body: 'H',type:'',
-	   year:2009,price:222,kilometers:222, fuel: '',iduser:'',adtitle:'test 1',descr:'ddd', adlocation:'',address:'',phone:'',email: 'test@test.ca',adtype:'sold', soldby:'owner',trans:'',color:'bleu',
-	   drivetrain:'', doorNo:''
-	  },
-	 {id: '2', make: 'Helium', model: '4.0026', body: 'He',type:'',
-	   year:2009,price:222,kilometers:222, fuel: '',iduser:'',adtitle:'test 1',descr:'ddd', adlocation:'',address:'',phone:'',email: 'test@test.ca',adtype:'sold', soldby:'owner',trans:'',color:'bleu',
-	   drivetrain:'', doorNo:''
-	  },
-	  {id: '3', make: 'Lithium', model: '6.941', body: 'Li',type:'',
-	   year:2009,price:222,kilometers:222, fuel: '',iduser:'',adtitle:'test 1',descr:'ddd', adlocation:'',address:'',phone:'',email: 'test@test.ca',adtype:'sold', soldby:'owner',trans:'',color:'bleu',
-	   drivetrain:'', doorNo:''
-	  },
-	  {id: '4', make: 'Beryllium', model: '9.0122', body: 'Be',type:'',
-	   year:2009,price:222,kilometers:222, fuel: '',iduser:'',adtitle:'test 1',descr:'ddd', adlocation:'',address:'',phone:'',email: 'test@test.ca',adtype:'sold', soldby:'owner',trans:'',color:'bleu',
-	   drivetrain:'', doorNo:''
-	  },
-	  {id: '5', make: 'Boron', model: '10.811', body: 'B',type:'',
-	   year:2009,price:222,kilometers:222, fuel: '',iduser:'',adtitle:'test 1',descr:'ddd', adlocation:'',address:'',phone:'',email: 'test@test.ca',adtype:'sold', soldby:'owner',trans:'',color:'bleu',
-	   drivetrain:'', doorNo:''
-	  }
-
-	];
-
-

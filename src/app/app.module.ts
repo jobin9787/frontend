@@ -22,6 +22,12 @@ import { CaradListComponent } from './components/carad-list/carad-list.component
 import { DataTableModule } from 'angular-4-data-table/src/index';
 import { CaradDetailComponent } from './components/carad-detail/carad-detail.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+// ********************** angular-modal-gallery *****************************
+import 'mousetrap'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save mousetrap`)
+import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------- angular-modal-gallery library import
+// **************************************************************************
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +48,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HttpModule,
     BrowserAnimationsModule,
     DataTableModule,
-    NgxPaginationModule      
+    NgxPaginationModule,
+    ModalGalleryModule.forRoot()    
   ],
   providers: [LoginService,
               UserService,

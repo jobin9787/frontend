@@ -22,5 +22,5 @@ export class Carad {
 		public  color: String;
 		public  drivetrain: String;
 		public  doorNo: String;
-
+        public  fileNumber: number;
 }
