@@ -2,7 +2,101 @@
 	
 
 <div>
+	<form (ngSubmit)="onKeywordSearch()">
+ 
 	
+ <div class="row">
+      <div class="col-sm-6">
+    		 <label for="carmake">Mark</label>
+         <select class="form-control" name="carmake" [(ngModel)]="search.element1" (change)="onMakeChange($event.target.value)">
+          <option [ngValue]="null" >---- Other ----</option>
+          <option *ngFor="let crm of allCarmake" [ngValue]="crm.makeId">
+           {{ crm.makeName }}
+          </option>
+         </select>
+      </div>
+      <div class="col-sm-6">
+    	<div class="form-group">
+    		 <label for="carmodel">Model</label>
+         <select class="form-control" name="carmodel" [(ngModel)]="search.element2">
+          <option [ngValue]="null" >---- Other ----</option>
+          <option *ngFor="let mdl of modellist" [ngValue]="mdl.modelid">
+           {{ mdl.modelname }}
+          </option>
+         </select>
+      </div>
+    </div>
+
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseAdSearch" aria-expanded="false" aria-controls="collapseAdSearch">
+    More option
+  </a>
+</p>
+<div class="collapse" id="collapseAdSearch">
+  <div class="col-sm-4">
+  <label>Price</label>
+ </div>
+       <div class="col-sm-4">
+      <div class="form-group">
+         <label for="minPrice">Min:</label>
+	       <input type="text" class="form-control" [(ngModel)]="search.element3" id="minPrice" name="minPrice"/>
+       </div>
+      </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="MaxPrice">Max:</label>
+	      <input  type="text" class="form-control" [(ngModel)]="search.element4" id="MaxPrice" name="MaxPrice"/>
+     </div>
+    </div>
+<br>
+<div class="col-sm-4">
+  <label>Kilometers</label>
+ </div>
+       <div class="col-sm-4">
+      <div class="form-group">
+         <label for="MinKilo">Min:</label>
+	       <input type="text" class="form-control" [(ngModel)]="search.element5" id="MinKilo" name="MinKilo"/>
+       </div>
+      </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="maxKilo">Max:</label>
+	      <input  type="text" class="form-control" [(ngModel)]="search.element6" id="maxKilo" name="maxKilo"/>
+     </div>
+    </div>
+
+<div class="col-sm-4">
+  <label>Year</label>
+ </div>
+       <div class="col-sm-4">
+      <div class="form-group">
+         <label for="minYear">Min:</label>
+	       <input type="text" class="form-control" [(ngModel)]="search.element7" id="minYear" name="minYear"/>
+       </div>
+      </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="maxYear">Max:</label>
+	      <input  type="text" class="form-control" [(ngModel)]="search.element8" id="maxYear" name="maxYear"/>
+     </div>
+    </div>
+</div>
+
+
+    <div class="col-sm-6">
+   			<mat-grid-list cols="20" rowHeight="60px">
+				<mat-grid-tile [colspan]="4" [rowspan]="1">
+						<button class="mat-primary" mat-raised-button type="submit">Submit Ad</button>
+				</mat-grid-tile>
+			</mat-grid-list>
+    </div>
+</div>
+
+ 
+
+
+
+</form>
 	
 </div>
 
@@ -21,7 +115,7 @@
 <div class="adetails">
 <div class="flol" >
 <h3 style="padding:0 !important;">
-{{caraditem.adtitle}} : BMW Série 3
+{{caraditem.adtitle}} : {{caraditem.make}} : {{caraditem.model}}
 </h3>
 <p class="infoVers">{{caraditem.model}} 318i</p>
 <cite>
