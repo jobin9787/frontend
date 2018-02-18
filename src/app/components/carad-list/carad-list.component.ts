@@ -8,6 +8,7 @@
 	import {Params, ActivatedRoute, Router} from '@angular/router';
 	import {Http} from '@angular/http';
 	import {AppConst} from '../../const/app-const';
+
     import { DataTable, DataTableResource } from 'angular-4-data-table';
     import {DataSource} from '@angular/cdk/collections';
     import {Observable} from 'rxjs/Observable';
@@ -105,13 +106,12 @@
       }
 
      );
-
-
-
      }
 
-
-
+   getCarLabel(label:string){
+   console.log("call label function ---> "+ this.carmakeService.getCarLabels(label));
+    return this.carmakeService.getCarLabels(label);
+   }
 
 	}
 

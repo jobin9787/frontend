@@ -8,8 +8,7 @@
 }
 
 .clear{
-	clear:both;
-
+clear:both;
 }
 
 .container{
@@ -18,4 +17,9 @@
 
 .adcontainer{
 	
+}
+
+hr {
+    clear: both;
+    visibility: hidden;
 }
