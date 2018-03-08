@@ -1,13 +1,15 @@
-	<div class="container">
-	<div class="row">
-	  <div class="col-sm-8"><img align="center" class="img-responsive" src="{{serverPath}}/image/carad/{{carad.id}}/{{carad.id}}1.png" onerror="this.src=&#39;https://static.paruvendu.com/201712281440/communfo/img/sitemobile/novisu-224x150.jpg?3&#39;"/></div>
-	  <div class="col-sm-4">col-sm-4</div>
-	</div>
+<div class="container">
+
 <div class="row">
-	<div class="col-sm-12">
-	 <br>
-	 <p>image list </p>
-  <modal-gallery [modalImages]="images"
+
+<div class="col-xs-8">
+	 	<div class="row">
+		<img align="center" class="thumbnail" style="max-height: 350px" src="{{serverPath}}/image/carad/{{carad.id}}/{{carad.id}}1.png" onerror="this.src='../../../assets/image/no-image.jpg'"/>
+        </div>
+	
+	<div class="row">
+	  	<div class="col-sm-12">
+     <modal-gallery [modalImages]="images"
                  [downloadable]="false"
                  [slideConfig]="{infinite: false}"
                  (hasData)="onImageLoaded($event)"
@@ -17,12 +19,10 @@
                  (lastImage)="onIsLastImage($event)"></modal-gallery>	
 
 	</div>
-</div>
-
+	</div>
+	
 	<div class="row">
 	  <div class="col-sm-12">col-sm</div>
-
-	  
 	</div>
 	<div class="row">
 	  <div class="col-sm-6">
@@ -49,7 +49,9 @@
 	</div>
 
 
-	  <div class="col-sm-6"> <table class="table">
+	  <div class="col-sm-6"> 
+
+	  <table class="table">
 	  <tbody>
 	    <tr>
 	      <th scope="row">Body Type</th>
@@ -68,11 +70,25 @@
 	      <td>{{carad.trans}}</td>
 	    </tr>
 	  </tbody>
-	</table></div>
+	</table>
+</div>
 	  
+</div>
+
+</div>
+
+
+
+	 <div class="col-sm-4">
+	 <div class="row">
+	 <app-google-map></app-google-map>
+     </div>
+      <div class="row">
+	 
+	<app-send-mail></app-send-mail>
+     </div>
 	</div>
 
+</div>
 
-
-
-	</div>
+</div>

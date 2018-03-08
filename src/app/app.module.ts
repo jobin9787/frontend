@@ -24,7 +24,9 @@ import { CaradDetailComponent } from './components/carad-detail/carad-detail.com
 import {NgxPaginationModule} from 'ngx-pagination';
 // ********************** angular-modal-gallery *****************************
 import 'mousetrap'; // Mandatory for angular-modal-gallery 3.x.x or greater (`npm i --save mousetrap`)
-import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------- angular-modal-gallery library import
+import { ModalGalleryModule } from 'angular-modal-gallery';
+import { SendMailComponent } from './components/send-mail/send-mail.component';
+import { GoogleMapComponent } from './components/google-map/google-map.component'; // <----------------- angular-modal-gallery library import
 // **************************************************************************
 
 
@@ -38,7 +40,9 @@ import { ModalGalleryModule } from 'angular-modal-gallery'; // <----------------
     SubmitCarAddComponent,
     UploadImageComponent,
     CaradListComponent,
-    CaradDetailComponent
+    CaradDetailComponent,
+    SendMailComponent,
+    GoogleMapComponent
   ],
   imports: [
   routing,
