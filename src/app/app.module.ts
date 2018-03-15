@@ -28,8 +28,9 @@ import { ModalGalleryModule } from 'angular-modal-gallery';
 import { SendMailComponent } from './components/send-mail/send-mail.component';
 import { GoogleMapComponent } from './components/google-map/google-map.component'; // <----------------- angular-modal-gallery library import
 // **************************************************************************
-
-
+import { AgmCoreModule } from '@agm/core';
+import { ResultComponent } from './components/result/result.component';
+import {GoogleMapService} from './services/google-map.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
     CaradListComponent,
     CaradDetailComponent,
     SendMailComponent,
-    GoogleMapComponent
+    GoogleMapComponent,
+    ResultComponent
   ],
   imports: [
   routing,
@@ -53,13 +55,17 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
     BrowserAnimationsModule,
     DataTableModule,
     NgxPaginationModule,
-    ModalGalleryModule.forRoot()    
+    ModalGalleryModule.forRoot(),
+    AgmCoreModule.forRoot({
+     apiKey: 'AIzaSyBiupLsev3b4hiWT94ixnwTLzrIpFMyyVU'
+   })    
   ],
   providers: [LoginService,
               UserService,
               CarAdService,
               CarmakeService,
-              UploadImageService],
+              UploadImageService,
+              GoogleMapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,7 @@
   import {CarAdService} from '../../services/car-ad.service';
   import {UploadImageService} from '../../services/upload-image.service';
   import {years} from '../../const/data-years';
+  import { Router} from '@angular/router';
   @Component({
     selector: 'app-submit-car-add',
     templateUrl: './submit-car-add.component.html',
@@ -19,7 +20,8 @@
    cartransmission :  Map<String,String>;
    modelListMap : Map<String, Carmodel[]>;
    private carad:Carad = new Carad();
-    constructor(private carmakeService: CarmakeService, private carAdService :CarAdService, private uploadImageService: UploadImageService) { }
+   
+    constructor(private carmakeService: CarmakeService, private carAdService :CarAdService, private uploadImageService: UploadImageService,private router: Router) { }
 
     ngOnInit() {
      this.allCarmake = this.carmakeService.getCarmake();
@@ -33,6 +35,7 @@
       res=>{
      this.uploadImageService.upload(JSON.parse(JSON.parse(JSON.stringify(res))._body).id);
       console.log('Succes' + JSON.stringify(res));
+       this.router.navigate(['/result']);
       },
       error=>{
       console.log('Error '+ error);

@@ -23,4 +23,5 @@ export class Carad {
 		public  drivetrain: String;
 		public  doorNo: String;
         public  fileNumber: number;
+        public postalcode: String;
 }

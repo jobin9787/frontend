@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {message} from '../../models/message';
 @Component({
   selector: 'app-send-mail',
   templateUrl: './send-mail.component.html',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SendMailComponent implements OnInit {
 
+mymassge : message;
   constructor() { }
 
   ngOnInit() {

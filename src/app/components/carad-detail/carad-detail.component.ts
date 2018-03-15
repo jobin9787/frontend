@@ -50,11 +50,9 @@ private imagesArray: Array<Image> = [];
     console.log("Parse Number--->"+this.caradId);
     this.carAdService.getCarad(this.caradId).subscribe(
     res=>{
-    console.log("----> response"+ JSON.stringify(res.json()));
     this.carad=res.json();
     this.fileNumber= JSON.parse(JSON.stringify(res.json())).fileNumber;
-    console.log("fileNumber ----> "+this.fileNumber);
-     this.imageInit(this.fileNumber);
+    this.imageInit(this.fileNumber);
     },
      err=>{
      console.log(err)
@@ -77,7 +75,7 @@ private imagesArray: Array<Image> = [];
 
 	  imageInit(fNumber:number){
 	     let init:number = 1; 
-	     console.log("call image init--> "+ fNumber);
+	    
 	   for(let i:number=init;i<=fNumber;i++)
 	    {
 	    this.imagesArray.push(
@@ -88,7 +86,6 @@ private imagesArray: Array<Image> = [];
 	        null // url
 	       )
 	      )
-	      console.log("--->imagesArray "+this.imagesArray);
 	     }
 	    }
 
