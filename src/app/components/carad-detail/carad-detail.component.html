@@ -6,7 +6,7 @@
 	 	<div class="row">
 		<img align="center" class="thumbnail" style="max-height: 350px" src="{{serverPath}}/image/carad/{{carad.id}}/{{carad.id}}1.png" onerror="this.src='../../../assets/image/no-image.jpg'"/>
         </div>
-	
+
 	<div class="row">
 	  	<div class="col-sm-12">
      <modal-gallery [modalImages]="images"
@@ -16,11 +16,11 @@
                  (close)="onCloseImageModal($event)"
                  (show)="onVisibleIndex($event)"
                  (firstImage)="onIsFirstImage($event)"
-                 (lastImage)="onIsLastImage($event)"></modal-gallery>	
+                 (lastImage)="onIsLastImage($event)"></modal-gallery>
 
 	</div>
 	</div>
-	
+
 	<div class="row">
 	  <div class="col-sm-12"></div>
 	</div>
@@ -49,7 +49,7 @@
 	</div>
 
 
-	  <div class="col-sm-6"> 
+	  <div class="col-sm-6">
 
 	  <table class="table">
 	  <tbody>
@@ -72,7 +72,7 @@
 	  </tbody>
 	</table>
 </div>
-	  
+
 </div>
 
 </div>
@@ -83,7 +83,7 @@
 	 <div class="row">
 	 <app-google-map [postalcode]="carad.postalcode" ></app-google-map>
      </div>
-      <div class="row">
+    <div class="marge row">
 	 <app-send-mail></app-send-mail>
      </div>
 	</div>

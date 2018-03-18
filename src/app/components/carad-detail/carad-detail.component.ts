@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
-
+import {GoogleMapService} from '../../services/google-map.service';
 
 @Component({
   selector: 'app-carad-detail',
@@ -42,13 +42,12 @@ private imagesArray: Array<Image> = [];
   ) {}
 
   ngOnInit() {
-   
+
     this.route.params.forEach((params:Params)=>{
 	     this.caradId= params['id'] ;
    });
 
-    console.log("Parse Number--->"+this.caradId);
-    this.carAdService.getCarad(this.caradId).subscribe(
+  this.carAdService.getCarad(this.caradId).subscribe(
     res=>{
     this.carad=res.json();
     this.fileNumber= JSON.parse(JSON.stringify(res.json())).fileNumber;
@@ -64,9 +63,9 @@ private imagesArray: Array<Image> = [];
       this.imagesArraySubscribed = this.imagesArray;
     });
 
-  
 
-    
+
+
 
   };
 
@@ -74,8 +73,8 @@ private imagesArray: Array<Image> = [];
 // Image gallery
 
 	  imageInit(fNumber:number){
-	     let init:number = 1; 
-	    
+	     let init:number = 1;
+
 	   for(let i:number=init;i<=fNumber;i++)
 	    {
 	    this.imagesArray.push(
@@ -123,7 +122,7 @@ private imagesArray: Array<Image> = [];
     // beforeTextDescription: '',
   };
 
-  
+
 
 
 

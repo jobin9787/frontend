@@ -13,14 +13,14 @@
     styleUrls: ['./submit-car-add.component.css']
   })
   export class SubmitCarAddComponent implements OnInit {
-   allCarmake: Carmake[]; 
+   allCarmake: Carmake[];
    modelarray: Carmodel[]=[];
    modellist: Carmodel[];
    yearsList =[{value:1,name:'1'}];
    cartransmission :  Map<String,String>;
    modelListMap : Map<String, Carmodel[]>;
    private carad:Carad = new Carad();
-   
+
     constructor(private carmakeService: CarmakeService, private carAdService :CarAdService, private uploadImageService: UploadImageService,private router: Router) { }
 
     ngOnInit() {
@@ -30,7 +30,6 @@
      }
 
     onSubmit(){
-    console.log(this.carad);
      this.carAdService.sendAd(this.carad).subscribe(
       res=>{
      this.uploadImageService.upload(JSON.parse(JSON.parse(JSON.stringify(res))._body).id);
@@ -50,7 +49,7 @@
       return this.modellist;
      }
 
-   
+
 
   initModel() {
   	this.modelarray.push(new Carmodel('civ','Civic'));

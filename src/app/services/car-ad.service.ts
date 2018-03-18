@@ -13,12 +13,10 @@ constructor(private http:Http) {}
 
     sendAd(carad:Carad) {
   	let url = this.serverPath+'/carad/add';
-   
     let headers = new Headers ({
       'Content-Type': 'application/json',
       'x-auth-token' : localStorage.getItem('xAuthToken')
     });
-      console.log("Send car ad" + JSON.stringify(carad));
     return this.http.post(url, JSON.stringify(carad), {headers: headers});
   }
 
@@ -28,20 +26,19 @@ constructor(private http:Http) {}
       'Content-Type': 'application/json',
       'x-auth-token' : localStorage.getItem('xAuthToken')
     });
- 
+
     return this.http.get(url, {headers: headers});
   }
 
 
     getCarad(id: Number){
       let url = this.serverPath+"/carad/"+id;
-      console.log("----> url "+url);
-	    let headers = new Headers ({
-	    'Content-Type':'application/json',
-	    'x-auth-token':localStorage.getItem('xAuthToken')
+      let headers = new Headers ({
+	    'Content-Type':'application/json'
+	    //,'x-auth-token':localStorage.getItem('xAuthToken')
        });
-     
-       return this.http.get(url, {headers:headers});
+      // return this.http.get(url, {headers:headers});
+          return this.http.get(url);
      }
 
     searchCarad(keyword:string){
@@ -60,7 +57,7 @@ constructor(private http:Http) {}
     'Content-Type':'application/json',
     'x-auth-token':localStorage.getItem('xAuthToken')
      });
-   
+
      return this.http.post(url,search, {headers:headers});
    }
 
