@@ -29,6 +29,7 @@ retrievePassword(email:string) {
   	let userInfo = {
   		"email" : email
   	}
+
   	let tokenHeader = new Headers({
   		'Content-Type' : 'application/json',
   		'x-auth-token' : localStorage.getItem('xAuthToken')
@@ -60,7 +61,7 @@ updateUserInfo(user: User, newPassword: string, currentPassword: string) {
 
  getCurrentUser() {
     let url = this.serverPath+'/user/getCurrentUser';
-    
+
     let tokenHeader = new Headers({
       'Content-Type' : 'application/json',
       'x-auth-token' : localStorage.getItem('xAuthToken')

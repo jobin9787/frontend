@@ -1,28 +1,28 @@
 <div class="container">
 
- 
+
  <div class="col-xs-9">
 
 <form (ngSubmit)="onSubmit()" ngNoForm>
   <div class="panel-group">
 	<div class="well well-lg">
-	 
+
   <label for="title">Add Title</label>
 	<input type="text" [(ngModel)]="carad.adtitle" class="form-control" id="title" name="firstName"/>
     </div>
   </div>
-   <div class="well well-lg">
+   <div class="row well">
     <label for="soldby">Sold by</label>
      <section>
      <mat-radio-group [(ngModel)]="carad.soldby" name="soldby">
      <mat-radio-button value="deal" color="primary">Dealer</mat-radio-button><br/>
      <mat-radio-button value="own" color="accent">Owner</mat-radio-button>
-     </mat-radio-group>	
+     </mat-radio-group>
     </section>
-   </div>	
+   </div>
 
 
-    <div class="row">
+    <div class="row well">
       <div class="col-sm-6">
     		 <label for="carmake">Mark</label>
          <select class="form-control" name="carmake" [(ngModel)]="carad.make" (change)="onMakeChange($event.target.value)">
@@ -31,10 +31,9 @@
            {{ crm.makeName }}
           </option>
          </select>
-      
-    </div>
-    
-    <div class="col-sm-6">
+       </div>
+
+     <div class="col-sm-6">
     	<div class="form-group">
     		 <label for="carmodel">Model</label>
          <select class="form-control" name="carmodel" [(ngModel)]="carad.model">
@@ -45,7 +44,9 @@
          </select>
       </div>
     </div>
-   
+</div>
+
+<div class="row well">
    <div class="col-sm-6">
       <div class="form-group">
          <label for="trans">Transmission</label>
@@ -56,7 +57,7 @@
          </select>
       </div>
     </div>
-    
+
     <div class="col-sm-6">
       <div class="form-group">
         <label for="drive">Drivetrain</label>
@@ -69,7 +70,9 @@
         </select>
       </div>
     </div>
-    
+    </div>
+
+    <div class="row well">
     <div class="col-sm-6">
          <div class="form-group">
           <label for="body">Body Type</label>
@@ -94,7 +97,8 @@
          </select>
       </div>
    </div>
- 
+   </div>
+    <div class="row">
 
      <div class="col-sm-6">
       <div class="form-group">
@@ -107,7 +111,7 @@
          </select>
         </div>
       </div>
-    
+
      <div class="col-sm-6">
        <div class="form-group">
          <label for="color">Colour</label>
@@ -139,7 +143,7 @@
          <input type="text"  class="form-control" [(ngModel)]="carad.postalcode" id="postalCode" name="postalCode" required>
 
        </div>
- 
+
       </div>
     <div class="col-sm-6">
       <div class="form-group">
@@ -154,7 +158,7 @@
    </div>
 
 <div class="album text-muted">
-<div calss="container">  
+<div calss="container">
 <div class="fileinput fileinput-new" data-provides="fileinput">
   <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
   <div>

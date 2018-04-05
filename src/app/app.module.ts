@@ -17,6 +17,7 @@ import { SubmitCarAddComponent } from './components/submit-car-add/submit-car-ad
 import {CarAdService} from './services/car-ad.service';
 import {CarmakeService} from './services/helper/carmake.service';
 import {UploadImageService} from './services/upload-image.service';
+import {EmailHelperService} from './services/helper/email-helper.service';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
 import { CaradListComponent } from './components/carad-list/carad-list.component';
 import { DataTableModule } from 'angular-4-data-table/src/index';
@@ -58,14 +59,15 @@ import {GoogleMapService} from './services/google-map.service';
     ModalGalleryModule.forRoot(),
     AgmCoreModule.forRoot({
      apiKey: 'AIzaSyBiupLsev3b4hiWT94ixnwTLzrIpFMyyVU'
-   })    
+   })
   ],
   providers: [LoginService,
               UserService,
               CarAdService,
               CarmakeService,
               UploadImageService,
-              GoogleMapService],
+              GoogleMapService,
+            EmailHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

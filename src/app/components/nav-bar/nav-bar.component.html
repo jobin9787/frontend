@@ -1,41 +1,37 @@
 <div class="page-top" style="width:100%; height:20px; background-color:#9AB7D5 "></div>
 
-<nav class="navbar navbar-default navbar-inverse">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand pointer" routerLink="/home">
-			Home
-		</a>
-	</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar">test test</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a  routerLink="/home">Home</a></li>
 
-	<div id ="navbar">
-		<ul class ="nav navbar-nav navbar-left">
-			<li><a mat-button routerLink="/caradList">Car list</a></li>
-			<form (ngSubmit)="onSearchByTitle()" class="navbar-form">
-				<div class="form-group">
-					<input type="text" name="searchByTitle" [(ngModel)]="keyboard" class="form-control" placeholder="Enter Key words"/>
-				</div>	
-				<button type="submit" class="btn btn-default">Search</button>
-			</form>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-		<li>
-		<a mat-button routerLink="/submitCaradd">Submit add</a>
-		</li>
-		<li *ngIf="!loggedIn">
-			<a mat-button routerLink="/myAccount">My Account</a>
-		</li>	
+        <li><a mat-button routerLink="/caradList">Car list</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+				<a mat-button routerLink="/submitCaradd">Submit add</a>
+				</li>
+				<li *ngIf="!loggedIn">
+          <a routerLink="/myAccount"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
         <li *ngIf="loggedIn">
-			<a mat-button routerLink="/google">Shopping Cart</a>
-		</li>
-		<li *ngIf="loggedIn">
-			<a mat-button routerLink="/myProfile">My Profile</a>
-		</li>
-		<li *ngIf="loggedIn">
-			<a mat-button (click)="logout()">Logout</a>
-		</li>
-		</ul>
-	</div>
-</div>
-
+    			<a mat-button routerLink="/myProfile">My Profile</a>
+    		</li>
+    		<li *ngIf="loggedIn">
+    			<a mat-button (click)="logout()">Logout</a>
+    		</li>
+      </ul>
+    </div>
+  </div>
 </nav>
